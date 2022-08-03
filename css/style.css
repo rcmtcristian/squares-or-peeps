@@ -97,18 +97,14 @@ footer {
 
 .hero {
 
-min-height: 100vh;
+min-height: 95vh;
+
 background-color: red;
 
 /* background-color: rgb(255, 241, 193); */
 }
 
-.info {
- 
-  height: 100vh;
-  background-color: blue;
-  /* background-color: rgb(255, 241, 193); */
-}
+
 
 
 .between {
