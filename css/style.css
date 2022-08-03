@@ -35,17 +35,60 @@ position: relative;
   max-width: 127.5rem;
 }
 
+@font-face {
+  font-family: 'neutral_facebold';
+  src: url('./fonts/webfontkit-20220803-135044/neutralface-bold-webfont.woff2') format('woff2'),
+    url('./fonts/webfontkit-20220803-135044/neutralface-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'neutral_faceregular';
+  src: url('./fonts/webfontkit-20220803-135044/neutralface-webfont.woff2') format('woff2'),
+    url('./fonts/webfontkit-20220803-135044/neutralface-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.container {
+  animation: transitionIn 0.4s cubic-bezier(.36, .7, .85, .34);
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
+#brand {
+  font-family:'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
+  position:sticky;
 }
 
 header > h2 {
+  font-family: 'neutral_facebold';
   font-size: 6.25vw
 }
+
 
 footer {
 
@@ -54,7 +97,7 @@ footer {
 
 .hero {
 
-height: 100vh;
+min-height: 100vh;
 background-color: red;
 
 /* background-color: rgb(255, 241, 193); */
@@ -66,6 +109,21 @@ background-color: red;
   background-color: blue;
   /* background-color: rgb(255, 241, 193); */
 }
+
+
+.between {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.upper > .barcode {
+width: 112px;
+ height: 40px;
+  x:0px; 
+  y:0px;
+  transform: translate(0,0)
+}
