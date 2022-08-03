@@ -25,7 +25,15 @@ body {
 
 }
 
+.container {
+position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
 
+  max-width: 127.5rem;
+}
 
 
 /******************************************
@@ -35,10 +43,29 @@ header {
 
 }
 
+header > h2 {
+  font-size: 6.25vw
+}
+
 footer {
 
 }
 
+
+.hero {
+
+height: 100vh;
+background-color: red;
+
+/* background-color: rgb(255, 241, 193); */
+}
+
+.info {
+ 
+  height: 100vh;
+  background-color: blue;
+  /* background-color: rgb(255, 241, 193); */
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
