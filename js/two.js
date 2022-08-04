@@ -8,8 +8,8 @@ const two = new Two({
   autostart: true
 }).appendTo(cont);
 
-// two.renderer.domElement.style.background = '#fcb215';
-// two.renderer.domElement.style.cursor = 'none';
+
+two.renderer.domElement.style.cursor = 'none';
 
 const cx = two.width / 0.6;
 const cy = two.height / 0.6;
@@ -19,11 +19,11 @@ const drag = .93;
 const radius = 20;
 
 /* It's creating a polygon with 32 sides. */
-let shape = new Two.Polygon(0,0, radius, 15);
+let shape = new Two.Polygon(0,0, radius, 8);
 
 let ball = new Two.Path(shape.vertices, true, true);
 ball.position.set(cx, cy);
-ball.noStroke().fill = '#f1f1f1'
+ball.noStroke().fill = '#0e0e0e'
 
 for (let i = 0; i < ball.vertices.length; i++) {
   const v = ball.vertices[i];
