@@ -97,14 +97,18 @@ footer {
 
 .hero {
 
-min-height: 95vh;
-
-background-color: red;
+min-height: 91vh;
+background-color: #ffffff;
 
 /* background-color: rgb(255, 241, 193); */
 }
 
-
+.info {
+ 
+  height: 33vh;
+  background-color: rgb(2, 26, 102);
+  /* background-color: rgb(255, 241, 193); */
+}
 
 
 .between {
@@ -112,9 +116,9 @@ background-color: red;
   justify-content: space-between;
 }
 
-.between > img {
+.pics {
   min-height: auto;
-  width: 18%;
+  width: 15%;
 
   border-radius: 7px;
 }
@@ -128,4 +132,23 @@ width: 112px;
   x:0px; 
   y:0px;
   transform: translate(0,0)
+}
+
+.containerTwo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 255px;
+  margin: 50px auto;
+  margin-top: -50px;
+  backgorund:rgb(255, 255, 255)
+}
+
+.boxes {
+  /* background-image: url('/images/ezgif.com-gif-maker\ \(33\).gif'); */
+  background-attachment: fixed;
+  background-color: rgb(0, 0, 0);
+  /* display: inline-block; */
+  height: 40px;
+  width: 40px;
+  margin: px;
 }

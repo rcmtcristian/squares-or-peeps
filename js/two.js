@@ -16,9 +16,10 @@ const cy = two.height / 0.6;
 const delta = new Two.Vector();
 const mouse = new Two.Vector(cx, cy);
 const drag = .93;
-const radius = 10;
+const radius = 20;
 
-let shape = new Two.Circle(0,0, radius, 32);
+/* It's creating a polygon with 32 sides. */
+let shape = new Two.Polygon(0,0, radius, 15);
 
 let ball = new Two.Path(shape.vertices, true, true);
 ball.position.set(cx, cy);
