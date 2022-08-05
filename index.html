@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.8.10/two.min.js"
     integrity="sha512-D9pUm3+gWPkv/Wl6vd45vRLjdkdEKGje7BxOxYG0N6m4UlEUB7RSljBwpmJNAOuf6txLLtlaRchoKfzngr/bQg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
       integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
       
   <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
@@ -22,19 +23,23 @@
   <section class="hero">
     <header>
       <h2>
-      
-         <button id="brand" href="" target="_blank"><a href="https://rcmtcristian.com/"></a> RCMTC</button>  Virtual Playground
+      <button id="brand"  class="slide" role="button"><span class="text">RCMT</span><span> TNX 4 visiting</span></button>
+         <!-- <button href="" target="_blank"><a href="https://rcmtcristian.com/" style="z-index: 1000;"></a> RCMTC</button> --> Virtual Playground 
       </h2>
       <a href="go"></a>
       
     </header>
     
     <main class="info">
-<button id="actionCircle" class="slide" role="button"><span class="text">Circle</span><span>Peek</span></button>
+<button id="actionCircle" class="slide" role="button"><span class="text">Circle</span><a href="https://rcmtcristian.com/"><span>Peek</span></a></button>
 
 <button id="actionGrid" class="slide" role="button"><span class="text">Grid</span><span>Peek</span></button>
 
 <button id="actionSword" class="slide" role="button"><span class="text">Sword</span><span>Peek</span></button>
+
+
+<button id="actionCircle" class="slide" role="button"><span class="text">RCMTC</span><a href="https://rcmtcristian.com/" target="_blank"><span>Peek</span></a></button>
+
 <section class="between">
  <section class="upper"><svg class="barcode"
         xmlns="http://www.w3.org/2000/svg">
@@ -56,10 +61,13 @@
           <rect x="88" y="0" width="4" height="20"></rect>
         </g>
       </svg></section>
-      <div>
-        
+      <div class="right">
+       <img data-x="-170" class="pics foward" src="./images/DALL·E 2022-07-02 14.21.47 - the edge of the observable universe within the shadow of a tall human .png" alt=""> 
+       
+       
       </div>
-      <img data-x="-170" class="pics foward" src="./images/DALL·E 2022-07-02 14.21.47 - the edge of the observable universe within the shadow of a tall human .png" alt="">
+      
+      
 
       </section>
 
@@ -90,12 +98,10 @@
   </div>
 </div>
 
-
 <div class="pont" hidden>
   <div class="circle"></div>
   <div class="dot"></div>
 </div>
-
 
 </section>
 
@@ -237,30 +243,16 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
   </main>
-
- 
-
-
- 
 
 
 </section>
-
-
-  
+<div class="mqr"></div>
+</div>
+<div class="mqrTwo">
 </body>
 <script src="/js/main.js"></script>
 <script src="/js/anime.js"></script>
 <script src="./js/two.js"></script>
+<script src="./js/hammer.js"></script>
 </html>

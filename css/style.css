@@ -104,17 +104,18 @@ position: relative;
   text-decoration: none;
     cursor: pointer;
     background: #fff;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    font-size: 1.2rem;
+    /* user-select: none; */
+    /* -webkit-user-select: none; */
+    /* touch-action: manipulation; */
 }
 
 button  {
   cursor: pointer;
     background: #fff;
 
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    /* -webkit-user-select: none;
+    touch-action: manipulation; */
 }
 header > h2 {
   font-family: 'neutral_facebold';
@@ -147,6 +148,12 @@ background-color: #000000;
 .between {
   display: flex;
   justify-content: space-between;
+ 
+}
+.right {
+ /* display: flex;
+ flex-direction: column; */
+ 
 }
 
 .pics {
@@ -155,7 +162,8 @@ background-color: #000000;
 transition: width 0.2s linear 300ms,
   opacity 300ms ;
   border-radius: 7px;
-  cursor: pointer;
+  cursor: pointer; 
+  float: right;
 }
 
 .pics:active{
@@ -396,4 +404,27 @@ width: 112px;
 
   border-top-right-radius: 25px 50px;
 
+}
+
+
+.mqr {
+  height: 70px;
+  width: 100px;
+  margin-left: -5px;
+  margin-top: -2.9em;
+  margin-bottom: 1em;
+  padding-top: 99px;
+background-image: url("/images/qr-code.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mqrTwo {
+  padding-top: 90px;
+  height: 90px;
+  width: 90px;
+  background-image: url("/images/qrcode3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

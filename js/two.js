@@ -9,17 +9,17 @@ const two = new Two({
 }).appendTo(cont);
 
 
-two.renderer.domElement.style.cursor = 'none';
+// two.renderer.domElement.style.cursor = 'none';
 
 const cx = two.width / 0.6;
 const cy = two.height / 0.6;
 const delta = new Two.Vector();
 const mouse = new Two.Vector(cx, cy);
 const drag = .93;
-const radius = 20;
+const radius = 15;
 
 /* It's creating a polygon with 32 sides. */
-let shapeOne = new Two.Polygon(0,0, radius, 8);
+let shapeOne = new Two.Polygon(0,0, radius, 19);
 
 let ball = new Two.Path(shapeOne.vertices, true, true);
 ball.position.set(cx, cy);

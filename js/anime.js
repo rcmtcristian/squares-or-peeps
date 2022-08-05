@@ -61,28 +61,6 @@ spread
     },
   })
 
-
-// const bringIn = anime({
-//   targets: '.pics',
-//   translateX: function (el) {
-//     return el.getAttribute('data-x');
-//   },
-//   translateY: function (el, i) {
-//     return 50 + (50 * i);
-//   },
-//   scale: function (el, i, l) {
-//     return (l - i) + .25;
-//   },
-//   rotate: function () { return anime.random(-360, 360); },
-//   borderRadius: function () { return ['50%', anime.random(10, 35) + '%']; },
-//   duration: function () { return anime.random(1200, 1800); },
-//   delay: function () { return anime.random(0, 400); },
-//   scale: function () { return anime.random(2, 8); },
-//   direction: 'alternate',
-//   loop: true
-// });
-
-
 const timelineTwo = anime.timeline({
   duration: 5500,
   easing: 'easeInSine',
@@ -94,13 +72,6 @@ const timelineTwo = anime.timeline({
 
 
 timelineTwo
-  // .add({
-  //   translateX: 0,
-  //   scale: 1,
-  //   easing: 'spring'
-  // })
-
-
   .add({
     backgroundColor: 'rgba(225, 231, 231,1)',
     borderRadius: ['0%', '50%'],
@@ -116,9 +87,6 @@ timelineTwo
     delay: anime.stagger(200, { grid: [14, 5], from: 'center' })
   })
 
-
-
-
 document.querySelector('#actionGrid').onclick = playIt.restart;
 
 document.querySelector('#actionGrid').onclick = timelineTwo.restart;
@@ -133,9 +101,8 @@ const InnerRotate = anime.timeline({
   delay: function (el, i,) { return i * 100 },
   duration: 9000,
   easing: 'easeInSine',
-  easing: 'easeOutExpo', // Can be inherited
-  direction: 'alternate', // Is not inherited
-  loop: true // Is not inherited
+  easing: 'easeOutExpo', 
+  direction: 'alternate', 
 });
 
 
@@ -154,9 +121,9 @@ const outerRotate = anime.timeline({
   delay: function (el, i,) { return i * 5 },
   duration: 8800,
   easing: 'easeInSine',
-  easing: 'easeOutExpo', // Can be inherited
-  direction: 'alternate', // Is not inherited
-  loop: true // Is not inherited
+  easing: 'easeOutExpo', 
+  direction: 'alternate', 
+  loop: true 
 });
 
 outerRotate
@@ -174,17 +141,12 @@ document.querySelector('#actionCircle').onclick = InnerRotate.restart;
 document.querySelector('#actionCircle').onclick = outerRotate.restart;
 
 
-
-
-
 anime({
   targets: '.hero',
   left: '240px',
   backgroundColor: '#fcfcfc',
   easing: 'easeInOutQuad'
 })
-
-
 
 
 /* ----------------------------------> */
@@ -328,8 +290,6 @@ const boneOfMySword = anime.timeline({
     duration: 2000,
     delay: 0,
   });
-
-// boneOfMySword.play();
 
 
 document.querySelector('#actionSword').onclick = boneOfMySword.restart;
