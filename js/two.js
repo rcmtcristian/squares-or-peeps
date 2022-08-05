@@ -19,9 +19,9 @@ const drag = .93;
 const radius = 20;
 
 /* It's creating a polygon with 32 sides. */
-let shape = new Two.Polygon(0,0, radius, 8);
+let shapeOne = new Two.Polygon(0,0, radius, 8);
 
-let ball = new Two.Path(shape.vertices, true, true);
+let ball = new Two.Path(shapeOne.vertices, true, true);
 ball.position.set(cx, cy);
 ball.noStroke().fill = '#0e0e0e'
 

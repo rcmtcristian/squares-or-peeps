@@ -8,7 +8,9 @@ const playIt = anime({
   translateX: anime.stagger(10, { grid: [14, 5], from: 'center', axis: 'x' }),
   translateY: anime.stagger(10, { grid: [14, 5], from: 'center', axis: 'y' }),
   translateX: anime.stagger(10, { grid: [14, 5], from: 'center', axis: 'x' }),
-  translateY: anime.stagger(10, { grid: [14, 5], from: 'center', axis: 'y' }),
+  //  translateY: anime.stagger(10, { grid: [14, 5], from: 'center', axis: 'y' }),
+  translateY: function (el, i) {return 50 + (50 * i)},
+  delay: function () { return anime.random(0, 400); },
   rotateZ: anime.stagger([0, 90], { grid: [14, 5], from: 'center', axis: 'x' }),
   delay: anime.stagger(200, { grid: [14, 5], from: 'center' }),
   easing: 'easeInOutQuad',
@@ -60,10 +62,25 @@ spread
   })
 
 
-
-
-
-
+// const bringIn = anime({
+//   targets: '.pics',
+//   translateX: function (el) {
+//     return el.getAttribute('data-x');
+//   },
+//   translateY: function (el, i) {
+//     return 50 + (50 * i);
+//   },
+//   scale: function (el, i, l) {
+//     return (l - i) + .25;
+//   },
+//   rotate: function () { return anime.random(-360, 360); },
+//   borderRadius: function () { return ['50%', anime.random(10, 35) + '%']; },
+//   duration: function () { return anime.random(1200, 1800); },
+//   delay: function () { return anime.random(0, 400); },
+//   scale: function () { return anime.random(2, 8); },
+//   direction: 'alternate',
+//   loop: true
+// });
 
 
 const timelineTwo = anime.timeline({
@@ -71,7 +88,8 @@ const timelineTwo = anime.timeline({
   easing: 'easeInSine',
   targets: '.boxes',
   direction: 'alternate',
-  backgroundColor:'black'
+  backgroundColor:'black',
+  
 });
 
 
@@ -154,4 +172,164 @@ outerRotate
 
 document.querySelector('#actionCircle').onclick = InnerRotate.restart;
 document.querySelector('#actionCircle').onclick = outerRotate.restart;
-document.querySelector('#actionCircle').onclick = add.restart;
+
+
+
+
+
+anime({
+  targets: '.hero',
+  left: '240px',
+  backgroundColor: '#fcfcfc',
+  easing: 'easeInOutQuad'
+})
+
+
+
+
+/* ----------------------------------> */
+
+function fitElementToParent(el, padding) {
+  var timeout = null;
+  function resize() {
+    if (timeout) clearTimeout(timeout);
+    /* Setting the value of the scale to 1. */
+    anime.set(el, { scale: 1 });
+    /* Setting the value of pad to padding if padding is truthy, otherwise it is setting the value of
+    pad to 0. */
+    var pad = padding || 0;
+    var parentEl = el.parentNode;
+    var elOffsetWidth = el.offsetWidth - pad;
+    var parentOffsetWidth = parentEl.offsetWidth;
+    var ratio = parentOffsetWidth / elOffsetWidth;
+    timeout = setTimeout(anime.set(el, { scale: ratio }), 10);
+  }
+  resize();
+}
+
+var advancedStaggeringAnimation = (function () {
+
+  var staggerVisualizerEl = document.querySelector('.stagger-visualizer');
+  var dotsWrapperEl = staggerVisualizerEl.querySelector('.dots-wrapper');
+  /* Creating a document fragment. */
+  /* 
+  Document.createDocumentFragment()
+  Creates a new empty DocumentFragment into which DOM nodes can be added to build an offscreen DOM tree.
+  */
+  var dotsFragment = document.createDocumentFragment();
+  var grid = [18, 10];
+
+  /* Multiplying the first and second elements of the grid array. */
+  var numberOfElements = grid[0] * grid[1];
+
+  fitElementToParent(staggerVisualizerEl, 0);
+  /* Creating a document fragment and appending it to the dotsWrapperEl. */
+
+  for (var i = 0; i < numberOfElements; i++) {
+    var dotEl = document.createElement('div');
+    dotEl.classList.add('dot');
+    dotsFragment.appendChild(dotEl);
+  }
+
+  /* Appending the document fragment to the dotsWrapperEl. */
+  dotsWrapperEl.appendChild(dotsFragment);
+
+  /* Creating a variable called index and assigning it to a random number between 0 and the number of
+  elements minus 1. It is also creating a variable called nextIndex and assigning it to 0. */
+  var index = anime.random(0, numberOfElements - 1);
+  /* Creating a variable called nextIndex and assigning it to 0. */
+  var nextIndex = 0;
+
+  function play() {
+
+    /* Creating a variable called nextIndex and assigning it to a random number between 0 and the number
+    of elements minus 1. */
+
+    nextIndex = anime.random(0, numberOfElements - 1);
+
+    animation = anime.timeline({
+      easing: 'easeInOutQuad',
+      complete: play
+    })
+      .add({
+        targets: '.stagger-visualizer .dot',
+        keyframes: [
+          {
+            translateX: anime.stagger('-2px', { grid: grid, from: index, axis: 'x' }),
+            translateY: anime.stagger('-2px', { grid: grid, from: index, axis: 'y' }),
+            duration: 100
+          }, {
+            translateX: anime.stagger('4px', { grid: grid, from: index, axis: 'x' }),
+            translateY: anime.stagger('4px', { grid: grid, from: index, axis: 'y' }),
+            scale: anime.stagger([2.6, 1], { grid: grid, from: index }),
+            duration: 225
+          }, {
+            translateX: 0,
+            translateY: 0,
+            scale: 0.01,
+            duration: 1200,
+          }
+        ],
+        delay: anime.stagger(130, { grid: grid, from: index })
+      }, 30)
+
+
+    index = nextIndex;
+
+  }
+
+  play();
+
+})();
+
+/* ----------------------------------------------------------------------------->*/
+
+const boneOfMySword = anime.timeline({
+  targets: '.Swords div',
+  easing: 'easeInOutSine',
+  delay: anime.stagger(50),
+  loop: true,
+  autoplay: false,
+  duration: 800,
+  loopComplete: (a) => console.log('end'),
+})
+
+  .add({
+    translateX: anime.stagger('1rem', { grid: [9, 9], from: 'center', axis: 'x' }),
+    delay: anime.stagger(200, { grid: [2, 9], from: 'center', direction: 'reverse' }),
+    rotate: anime.stagger([40, -40], { from: 'first' }),
+    scale: function () {
+      return anime.random(0, -5);
+    },
+    easing: 'easeOutElastic(1, .18)',
+    duration: 750,
+
+  })
+  .add({
+    translateX: anime.stagger([25, -25], { from: 'first' }),
+    translateY: 0,
+    rotate: anime.stagger([40, -40], { from: 'first' }),
+
+    delay: anime.stagger(10, { from: 'first' }),
+  })
+  .add({
+
+    translateY: anime.stagger([-240, 240]),
+    rotate: () => anime.random(-100, 100),
+    scale: anime.stagger([1, 3], { from: 'center' }),
+    delay: anime.stagger(10, { from: 0 }),
+
+  })
+  .add({
+    translateX: 0,
+    translateY: 0,
+    scale: 1,
+    rotate: 360,
+    duration: 2000,
+    delay: 0,
+  });
+
+// boneOfMySword.play();
+
+
+document.querySelector('#actionSword').onclick = boneOfMySword.restart;

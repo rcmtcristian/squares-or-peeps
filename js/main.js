@@ -9,8 +9,6 @@ function showCir() {
  
 }
 
-
-
 let ag = document.getElementById('actionGrid')
 
 ag.addEventListener('click', showGrid)
@@ -18,9 +16,20 @@ ag.addEventListener('click', showGrid)
 function showGrid() {
   const b = document.querySelector(".containerTwo");
   b.classList.toggle('show')
-  x.classList.toggle('show')
-
 }
+
+let aS = document.getElementById('actionSword')
+
+aS.addEventListener('click', showSword)
+
+function showSword() {
+  const z = document.querySelector(".Swords");
+  z.classList.toggle('show')
+}
+
+
+
+
 
 
 
