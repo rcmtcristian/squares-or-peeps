@@ -16,7 +16,7 @@ A compilation of succesfull animation using different javascript libraries
 
 ## Tech Stack
 
-**Client:** Anime.js, Two.js, Hammer.js
+**Technology:** Anime.js, Two.js, Hammer.js
 
 
 ## Acknowledgements
